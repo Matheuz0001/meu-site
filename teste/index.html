@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decisão Importante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        #btnAliancas {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>O que você prefere? <br> Trocar nossas alianças 💍 ou me dar uma camisa do Coringão? 🖤⚽</h2>
+
+        <div class="btn-container">
+            <button id="btnAliancas" class="btn btn-success px-4 py-2">Alianças ❤️</button>
+            <button id="btnCamisa" class="btn btn-dark px-4 py-2">Camisa do Coringão 🦅</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btnAliancas").addEventListener("mouseover", function() {
+            let maxX = window.innerWidth - this.offsetWidth - 20;
+            let maxY = window.innerHeight - this.offsetHeight - 20;
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+            this.style.position = "absolute";
+            this.style.left = x + "px";
+            this.style.top = y + "px";
+        });
+
+        document.getElementById("btnCamisa").addEventListener("click", function() {
+            window.location.href = "resposta.html"; // Alterado para HTML, já que PHP não pode ser usado
+        });
+    </script>
+
+</body>
+</html>
